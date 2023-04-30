@@ -1,26 +1,8 @@
-class Sorter {
-  constructor(public collection: number[]) {}
-
-  //sorting function
-  sort(): void {
-    const { length } = this.collection;
-
-    //bubble sort algorithm
-    for (let i = 0; i < length; i++) {
-      for (let j = 0; j < length - i - 1; j++) {
-        if (this.collection[j] > this.collection[j + 1]) {
-          //swapping the value
-          const leftHand = this.collection[j];
-          this.collection[j] = this.collection[j + 1];
-          this.collection[j + 1] = leftHand;
-        }
-      }
-    }
-  }
-}
+import { Sorter } from "./Sorter";
+import { NumberCollection } from "./NumbersCollection";
 
 //creating a object of the class
-const sorter = new Sorter([10, 5, -1, 2]);
+const numberCollection = new NumberCollection([10, 5, -1, 2]);
+const sorter = new Sorter(numberCollection);
 sorter.sort();
-
 console.log(sorter.collection);
